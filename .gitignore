@@ -21,3 +21,7 @@ dump.rdb
 *.code-workspace
 .vscode/
 .cursor/
+
+# internal notes
+**/stories/**
+**/bugs/**
