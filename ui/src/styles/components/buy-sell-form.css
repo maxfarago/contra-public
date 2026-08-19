@@ -1,0 +1,88 @@
+/* BuySellForm Component Styles */
+
+.buy-sell-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.buy-sell-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.buy-sell-form__error {
+  margin: var(--space-2) 0 0 0;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-error);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+}
+
+.buy-sell-form__submit-button {
+  width: 100%;
+  padding: var(--space-4);
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.buy-sell-form__submit-button .loader-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--color-primary-light);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Form spacing and layout */
+.buy-sell-form .smart-input {
+  margin: 0;
+}
+
+.buy-sell-form .buy-sell-button {
+  margin: 0;
+}
+
+.buy-sell-form .slippage-control {
+  margin: 0;
+  opacity: 0.6;
+  transition: opacity var(--transition-normal);
+}
+
+.buy-sell-form .slippage-control:hover {
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .buy-sell-form {
+    gap: var(--mobile-space-3);
+    background-color: var(--color-background);
+  }
+  
+  .buy-sell-form__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--mobile-space-2);
+  }
+  
+  .buy-sell-form__error {
+    padding: var(--mobile-space-2) var(--mobile-space-3);
+    font-size: var(--mobile-font-sm);
+  }
+  
+  .buy-sell-form__submit-button {
+    padding: var(--mobile-space-3);
+    font-size: var(--mobile-font-xl);
+    min-height: var(--touch-target-min);
+  }
+}

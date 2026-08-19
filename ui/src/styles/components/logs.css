@@ -1,0 +1,119 @@
+/* Logs Component Styles */
+
+.logs-container {
+  background-color: var(--color-background);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-mono);
+}
+
+.logs-entry {
+  margin-bottom: var(--space-1);
+}
+
+.logs-timestamp {
+  color: var(--color-text-placeholder);
+  font-weight: var(--font-weight-semibold);
+  padding-right: var(--space-2);
+}
+
+.logs-message {
+  color: var(--color-text);
+  text-transform: lowercase;
+}
+
+.logs-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-left: var(--space-2);
+}
+
+.logs-copy-button {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  transition: var(--transition-all);
+}
+
+.logs-copy-button:hover {
+  color: var(--color-primary-medium);
+}
+
+.logs-inline-order-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  transition: none;
+  cursor: pointer;
+}
+
+.logs-inline-order-link:hover {
+  color: white;
+  font-weight: var(--font-weight-semibold);
+}
+
+.logs-solscan-link {
+  color: var(--color-text);
+  text-decoration: underline;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: var(--transition-all);
+}
+
+.logs-solscan-link:hover {
+  color: var(--color-primary-medium);
+}
+
+.logs-solscan-icon {
+  font-size: var(--font-size-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logs-container {
+    padding: var(--mobile-space-3);
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .logs-entry {
+    margin-bottom: var(--mobile-space-1);
+    word-break: break-word;
+  }
+  
+  .logs-timestamp {
+    padding-right: var(--mobile-space-1);
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .logs-message {
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .logs-actions {
+    gap: var(--mobile-space-1);
+    margin-left: var(--mobile-space-1);
+  }
+  
+  .logs-copy-button {
+    font-size: var(--mobile-font-xs);
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    padding: var(--mobile-space-1);
+  }
+  
+  .logs-solscan-link {
+    gap: var(--mobile-space-1);
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .logs-solscan-icon {
+    font-size: var(--mobile-font-sm);
+  }
+}

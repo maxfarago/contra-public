@@ -1,0 +1,26 @@
+# clippy configuration
+
+# Set thresholds for various lints
+too-many-arguments-threshold = 10
+too-many-lines-threshold = 300
+cognitive-complexity-threshold = 30
+type-complexity-threshold = 25
+trivial-copy-size-limit = 16
+unnecessary-box-size = 128
+vec-box-size-threshold = 128
+
+# Allow some specific patterns
+allow-dbg-in-tests = true
+allow-expect-in-tests = true
+allow-panic-in-tests = true
+allow-print-in-tests = true
+allow-unwrap-in-tests = true
+allow-useless-vec-in-tests = true
+allow-indexing-slicing-in-tests = true
+
+# Allow some specific methods
+allow-comparison-to-zero = true
+allow-mixed-uninlined-format-args = true
+allow-one-hash-in-raw-strings = true
+allow-private-module-inception = true
+allow-unwrap-in-consts = true

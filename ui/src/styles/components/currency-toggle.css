@@ -1,0 +1,15 @@
+/* Currency Toggle Component */
+
+.currency-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.currency-toggle__separator {
+  color: var(--color-text-muted);
+}
+
+.currency-toggle__button--active {
+  color: var(--color-primary) !important;
+  font-weight: var(--font-weight-normal) !important;
+}

@@ -1,0 +1,106 @@
+/* BuySellToggle Component Styles */
+
+/* ===== CONTAINER ===== */
+.buy-sell-toggle {
+  display: flex;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-dark);
+  padding: var(--space-1);
+  gap: var(--space-1);
+}
+
+/* ===== BUTTON BASE ===== */
+.buy-sell-toggle__button {
+  flex: 1;
+  margin: 0;
+  padding: var(--space-2);
+  border: none !important;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: var(--transition-all);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  outline: none !important;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: none !important;
+}
+
+.buy-sell-toggle__button:focus,
+.buy-sell-toggle__button:active,
+.buy-sell-toggle__button:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.buy-sell-toggle__button:first-child {
+  border-right: 1px solid var(--color-border);
+}
+
+/* ===== BUY BUTTON STATES ===== */
+.buy-sell-toggle__button--buy {
+  color: var(--color-text-placeholder);
+}
+
+.buy-sell-toggle__button--buy:hover {
+  color: var(--color-buy-medium);
+  background-color: var(--color-buy-dark);
+}
+
+.buy-sell-toggle__button--buy.buy-sell-toggle__button--active {
+  color: var(--color-buy-bright);
+  background-color: var(--color-buy-dark);
+}
+
+.buy-sell-toggle__button--buy.buy-sell-toggle__button--active:hover {
+  opacity: 0.9;
+}
+
+/* ===== SELL BUTTON STATES ===== */
+.buy-sell-toggle__button--sell {
+  color: var(--color-text-placeholder);
+}
+
+.buy-sell-toggle__button--sell:hover {
+  color: var(--color-sell-medium);
+  background-color: var(--color-sell-dark);
+}
+
+.buy-sell-toggle__button--sell.buy-sell-toggle__button--active {
+  color: var(--color-sell-bright);
+  background-color: var(--color-sell-dark);
+}
+
+.buy-sell-toggle__button--sell.buy-sell-toggle__button--active:hover {
+  opacity: 0.9;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.buy-sell-toggle__button:focus-visible {
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .buy-sell-toggle {
+    padding: var(--mobile-space-1);
+    gap: var(--mobile-space-1);
+  }
+  
+  .buy-sell-toggle__button {
+    padding: var(--mobile-space-3);
+    font-size: var(--mobile-font-base);
+    min-height: var(--touch-target-min);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "command_type": "CREATE_ORDER",
+  "order_id": "c3d4e5f6-a7b8-9012-3456-7890abcdef12",
+  "order_type": "Countersell",
+  "token_to_monitor": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzL7M6bGoNZb8m",
+  "initial_holdings_microtokens": 100000000,
+  "max_to_sell_microtokens": 50000000,
+  "mcap_threshold_lamports": 1000000000000,
+  "buy_threshold_lamports": 10000000000,
+  "sell_pct_bps": 2500,
+  "wallet_public_key": "YOUR_WALLET_PUBLIC_KEY",
+  "wallet_private_key_encrypted": "ENCRYPTED_PRIVATE_KEY_BLOB"
+}

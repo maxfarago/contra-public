@@ -1,0 +1,241 @@
+/* TokenSearch Component Styles */
+
+.token-search {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-width: 450px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.token-search__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+} 
+
+.token-search__input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.token-search__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+}
+
+.token-search__icon {
+  position: absolute;
+  left: 12px;
+  color: var(--color-text-placeholder);
+  font-size: 18px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.token-search__input {
+  margin: 0;
+  padding: 14px 14px 14px 38px;
+  width: 100%;
+  border-radius: var(--radius-xl) !important;
+  transition: 
+    width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    all var(--transition-normal);
+  font-size: 16px;
+}
+
+.token-search__input.token-search__input--with-result {
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0 !important;
+}
+
+.token-search__loading-text {
+  color: var(--color-text-placeholder);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.token-search__error {
+  color: var(--p-form-element-invalid-color);
+  margin: var(--space-2) 0 0 0;
+}
+
+.token-search__result {
+  animation: slideInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: block;
+  margin: 0;
+  padding: 0 var(--space-3);
+  cursor: pointer;
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: var(--transition-all) !important;
+  background-color: var(--color-surface-dark);
+  line-height: var(--line-height-tight) !important;
+  height: fit-content !important;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  border: 1px solid var(--color-border);
+  border-top: none;
+}
+
+.token-search__result--placeholder {
+  height: 80px !important;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: default !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+.token-search__result--loading {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 80px !important;
+  background-color: transparent !important;
+  border: none !important;
+  cursor: default !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+.token-search__result:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+  background-color: var(--color-surface-secondary) !important;
+}
+
+.token-search__result:visited {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.token-search__result article {
+  margin: 0 !important;
+  background-color: transparent !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .token-search {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .token-search__input {
+    padding: 16px 16px 16px 40px;
+    font-size: 1rem; /* changed from --mobile-font-base */
+    min-height: var(--touch-target-min);
+  }
+  
+  .token-search__icon {
+    left: 12px;
+    font-size: 18px;
+  }
+  
+  .token-search__result {
+    min-height: var(--touch-target-min);
+  }
+  
+  .token-search__result article {
+    padding: var(--mobile-space-2) 0 !important;
+  }
+}
+
+/* Focus States */
+.token-search__input:focus {
+  outline: none !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 
+    0 0 0 2px rgba(195, 89, 210, 0.2),
+    0 0 0 4px rgba(195, 89, 210, 0.1),
+    0 4px 12px rgba(195, 89, 210, 0.15) !important;
+  transform: translateY(-1px) !important;
+  transition: all var(--transition-normal) !important;
+}
+
+.token-search__input.token-search__input--with-result:focus {
+  border-radius: 6px 6px 0 0 !important;
+  border-color: var(--color-border) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+
+.token-search__input:hover:not(:focus) {
+  border-color: var(--color-border-light) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.token-search__input.token-search__input--with-result:hover:not(:focus) {
+  border-radius: 6px 6px 0 0 !important;
+}
+
+/* Autofill States */
+.token-search__input:-webkit-autofill,
+.token-search__input:-webkit-autofill:hover,
+.token-search__input:-webkit-autofill:focus,
+.token-search__input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--color-background) inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+  background-color: var(--color-background) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox autofill */
+.token-search__input:-moz-autofill {
+  background-color: var(--color-background) !important;
+  color: var(--color-text) !important;
+}
+
+/* Search input clear button (X) */
+.token-search__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  background: var(--color-text-muted);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+  mask-size: contain;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.token-search__input::-webkit-search-cancel-button:hover {
+  background: var(--color-text);
+}
+
+/* Firefox clear button */
+.token-search__input::-moz-search-clear-button {
+  -moz-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  background: var(--color-text-muted);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+  mask-size: contain;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.token-search__input::-moz-search-clear-button:hover {
+  background: var(--color-text);
+}
+
+/* Result Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

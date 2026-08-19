@@ -1,0 +1,142 @@
+/* SummaryStats Component Styles */
+
+.summary-stats {
+  padding: var(--space-4) var(--space-2);
+}
+
+.summary-stats__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.summary-stats__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.summary-stats__header {
+  background-color: transparent;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.summary-stats__value {
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+  padding: var(--space-1) 0;
+}
+
+/* Stacked values styling */
+.summary-stats__stacked {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.summary-stats__primary {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.summary-stats__secondary {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Colorization for profit/loss values */
+.summary-stats--positive {
+  color: var(--color-buy-bright) !important;
+}
+
+.summary-stats--negative {
+  color: var(--color-sell-bright) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .summary-stats__table {
+    font-size: var(--font-size-xs);
+  }
+  
+  .summary-stats__header,
+  .summary-stats__value {
+    padding: var(--space-1) var(--space-2);
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-stats {
+    padding: var(--mobile-space-3) 0;
+    margin-bottom: var(--mobile-space-4);
+  }
+  
+  .summary-stats__title {
+    font-size: var(--mobile-font-lg);
+    margin-bottom: var(--mobile-space-3);
+  }
+  
+  .summary-stats__table {
+    font-size: var(--mobile-font-xs);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--mobile-space-3);
+    border-collapse: initial;
+  }
+  
+  .summary-stats__table thead {
+    display: none;
+  }
+  
+  .summary-stats__table tbody {
+    display: contents;
+  }
+  
+  .summary-stats__table tr {
+    display: contents;
+  }
+  
+  .summary-stats__header,
+  .summary-stats__value {
+    padding: var(--mobile-space-2);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    text-align: left;
+    white-space: normal;
+    min-width: 0;
+  }
+  
+  .summary-stats__header {
+    font-size: var(--mobile-font-xs);
+    color: var(--color-text-muted);
+    margin-bottom: var(--mobile-space-1);
+  }
+  
+  .summary-stats__value {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  /* Order: Balance, Unrealized, Realized (top row), Bought, Sold, Total Profit (bottom row) */
+  .summary-stats__value:nth-child(1) { order: 1; } /* Balance */
+  .summary-stats__value:nth-child(2) { order: 2; } /* Unrealized */
+  .summary-stats__value:nth-child(3) { order: 3; } /* Realized */
+  .summary-stats__value:nth-child(4) { order: 4; } /* Bought */
+  .summary-stats__value:nth-child(5) { order: 5; } /* Sold */
+  .summary-stats__value:nth-child(6) { order: 6; } /* Total Profit */
+  
+  .summary-stats__primary {
+    font-size: var(--mobile-font-md);
+  }
+  
+  .summary-stats__secondary {
+    font-size: var(--mobile-font-xs);
+  }
+}

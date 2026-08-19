@@ -1,0 +1,60 @@
+[package]
+name = "axton"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+    "trades",
+    "guillotine",
+    "hermes",
+    "janus",
+    "shylock",
+    "buffett",
+    "commons",
+    "ticker",
+    "rosetta"
+]
+
+[workspace.dependencies]
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+solana-sdk = "1.18.26"
+solana-client = "1.18.26"
+solana-program = "1.18.26"
+solana-transaction-status = "1.18.26"
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+anyhow = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+spl-token = "4.0"
+aws-sdk-kms = "1"
+zeroize = "1"
+dashmap = "5.5"
+borsh = "1.5.1"
+
+[dependencies]
+config = "0.14"
+dotenvy = "0.15"
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+aws-config = "1"
+aws-sdk-sqs = "1"
+aws-sdk-kms = { workspace = true }
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+sqlx = { version = "0.7", default-features = false, features = ["postgres", "runtime-tokio-rustls", "macros"] }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+trades = { path = "trades" }
+guillotine = { path = "guillotine" }
+hermes = { path = "hermes" }
+janus = { path = "janus" }
+shylock = { path = "shylock" }
+buffett = { path = "buffett" }
+commons = { path = "commons" }
+ticker = { path = "ticker" }
+dashmap = { workspace = true }

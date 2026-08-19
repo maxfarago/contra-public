@@ -1,0 +1,100 @@
+/* BuySellButton Component Styles */
+
+.buy-sell-button {
+  width: 100%;
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: var(--transition-all);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin-top: var(--space-2);
+}
+
+/* Buy Button Styles */
+.buy-sell-button--buy {
+  background-color: var(--color-buy-medium) !important;
+}
+
+.buy-sell-button--buy:hover:not(:disabled) {
+  background-color: var(--color-buy-bright) !important;
+  text-shadow: 1px 1px 2px var(--color-buy-medium) !important;
+}
+
+.buy-sell-button--buy:active:not(:disabled) {
+  background-color: var(--color-buy-bright) !important;
+}
+
+/* Sell Button Styles */
+.buy-sell-button--sell {
+  background-color: var(--color-sell-medium) !important;
+}
+
+.buy-sell-button--sell:hover:not(:disabled) {
+  background-color: var(--color-sell-bright) !important;
+  color: white;
+  text-shadow: 1px 1px 2px var(--color-sell-dark) !important;
+}
+
+.buy-sell-button--sell:active:not(:disabled) {
+  background-color: var(--color-sell-bright) !important;
+}
+
+/* Error State */
+.buy-sell-button--error {
+  background: var(--color-sell-dark) !important;
+  color: var(--color-sell-bright) !important;
+  cursor: not-allowed;
+}
+
+/* Disabled State */
+.buy-sell-button:disabled {
+  background: var(--color-surface-secondary) !important;
+  color: var(--color-text-placeholder);
+  cursor: not-allowed;
+}
+
+/* Loading State */
+.buy-sell-button[aria-busy="true"] {
+  position: relative;
+  color: transparent;
+}
+
+.buy-sell-button[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Focus States */
+.buy-sell-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .buy-sell-button {
+    padding: var(--mobile-space-3) !important;
+    font-size: var(--mobile-font-md) !important;
+  }
+}
+
+/* Animation for smooth transitions */
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

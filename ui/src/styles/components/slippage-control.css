@@ -1,0 +1,91 @@
+/* SlippageControl Component Styles */
+
+.slippage-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in-out;
+  padding-bottom: var(--space-1);
+}
+
+.slippage-control--focused {
+  opacity: 1;
+}
+
+.slippage-control__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-placeholder);
+  flex-shrink: 0;
+}
+
+.slippage-control__right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-dark);
+  padding: var(--space-0_5) var(--space-2);
+}
+
+.slippage-control__mode {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-placeholder);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slippage-control__input {
+  text-align: right;
+  width: 40px;
+  margin: 0;
+  background-color: transparent;
+  color: var(--color-text-placeholder);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-xs);
+}
+
+.slippage-control__input:focus {
+  color: var(--color-text);
+}
+
+.slippage-control__suffix {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-placeholder);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .slippage-control {
+    padding-bottom: var(--mobile-space-1);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--mobile-space-2);
+  }
+  
+  .slippage-control__label {
+    font-size: var(--mobile-font-sm);
+  }
+  
+  .slippage-control__right {
+    padding: var(--mobile-space-1) var(--mobile-space-2);
+    min-height: var(--touch-target-min);
+  }
+  
+  .slippage-control__mode {
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .slippage-control__input {
+    width: 50px;
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .slippage-control__suffix {
+    font-size: var(--mobile-font-xs);
+  }
+}

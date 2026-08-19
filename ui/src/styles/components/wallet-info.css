@@ -1,0 +1,120 @@
+/* Wallet Info Component */
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-all);
+  white-space: nowrap;
+  background: none;
+  gap: var(--space-1);
+}
+
+/* Normal Size */
+.wallet-info--normal {
+  font-size: var(--font-size-sm);
+}
+
+/* Condensed Size */
+.wallet-info--condensed {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+/* Wallet Balance Element */
+.wallet-balance {
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wallet-balance__icon {
+  flex-shrink: 0;
+  color: var(--color-text);
+}
+
+.wallet-balance__amount {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-body);
+}
+
+/* Wallet Address Element */
+.wallet-address {
+  display: flex;
+  align-items: center;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wallet-address__text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-placeholder);
+  white-space: nowrap;
+}
+
+.wallet-address__copy-btn {
+  background: none;
+  border: none;
+  color: var(--color-text-placeholder);
+  cursor: pointer;
+  padding: var(--space-1);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-all);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wallet-address__copy-btn:hover {
+  color: var(--color-primary);
+}
+
+/* Checkmark icon styling */
+.wallet-address__copy-btn--copied {
+  color: var(--color-success) !important;
+}
+
+/* Color Variants */
+.wallet-info--default .wallet-balance__icon,
+.wallet-info--default .wallet-balance__amount {
+  color: var(--color-text);
+}
+
+.wallet-info--error .wallet-balance__icon,
+.wallet-info--error .wallet-balance__amount {
+  color: var(--color-error);
+}
+
+.wallet-info--success .wallet-balance__icon,
+.wallet-info--success .wallet-balance__amount {
+  color: var(--color-success);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .wallet-info {
+    gap: var(--mobile-space-1);
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .wallet-info--normal {
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .wallet-balance__amount {
+    font-size: var(--mobile-font-sm);
+  }
+  
+  /* Hide wallet address and copy button on mobile */
+  .wallet-address {
+    display: none;
+  }
+}

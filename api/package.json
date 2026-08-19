@@ -1,0 +1,38 @@
+{
+  "name": "axton-api",
+  "version": "1.0.0",
+  "description": "middleware for the axton trading ecosystem",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matt axton",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.584.0",
+    "@aws-sdk/client-sqs": "^3.585.0",
+    "@aws-sdk/rds-signer": "^3.908.0",
+    "@fastify/autoload": "^5.8.0",
+    "@fastify/cookie": "^8.3.0",
+    "@fastify/cors": "^9.0.1",
+    "@solana/web3.js": "^1.98.2",
+    "dotenv": "^17.2.3",
+    "fastify": "^4.24.3",
+    "fastify-plugin": "^4.5.1",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "nodemon": "^3.1.0",
+    "pino-pretty": "^10.2.3"
+  }
+}

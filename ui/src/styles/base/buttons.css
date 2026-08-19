@@ -1,0 +1,134 @@
+/* Button Component System */
+
+/* Base Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--radius-none);
+  cursor: pointer;
+  transition: var(--transition-all);
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: var(--color-surface-tertiary);
+  color: var(--color-text);
+}
+
+.btn:disabled {
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-secondary);
+  cursor: not-allowed;
+}
+
+/* Button Variants */
+.btn--transparent {
+  background-color: transparent;
+  color: var(--color-text-muted);
+}
+
+.btn--transparent:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn--transparent:focus,
+.btn--transparent:active {
+  background-color: transparent;
+  color: var(--color-primary);
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.btn--back {
+  background-color: var(--color-surface-secondary);
+  color: var(--color-text);
+}
+
+.btn--back:hover:not(:disabled) {
+  background-color: var(--color-surface-tertiary);
+}
+
+.btn--back:disabled {
+  color: var(--color-text-muted);
+  background-color: var(--color-surface-secondary);
+}
+
+.btn--tertiary {
+  background-color: transparent;
+  color: var(--color-text-muted);
+  border: none;
+  padding: var(--space-1_5) var(--space-0_5);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+}
+
+.btn--tertiary:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.btn--tertiary:focus,
+.btn--tertiary:active {
+  background-color: transparent;
+  color: var(--color-text);
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.btn--tertiary:disabled {
+  color: var(--color-text-placeholder);
+  background-color: transparent;
+}
+
+/* Button Sizes */
+.btn--sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.btn--lg {
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--font-size-lg);
+}
+
+/* Icon Buttons */
+.btn--icon {
+  padding: var(--space-2);
+  width: auto;
+  height: auto;
+}
+
+.btn--icon svg {
+  transition: var(--transition-all);
+}
+
+.btn--icon:hover:not(:disabled) svg {
+  color: var(--color-primary);
+}
+
+/* Focus States */
+.btn:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.preset-button:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

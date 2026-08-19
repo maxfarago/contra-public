@@ -1,0 +1,290 @@
+/* SmartInput Component Styles */
+
+.smart-input {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Border for presets mode */
+.smart-input:has(.smart-input__presets) {
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+}
+
+/* Border for slider mode - only around input field */
+.smart-input:has(.smart-input__slider) .smart-input__field {
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+}
+
+/* Input Field */
+.smart-input__field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-surface);
+  transition: var(--transition-all);
+}
+
+.smart-input__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-placeholder);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  pointer-events: auto;
+  z-index: 1;
+  transition: var(--transition-all);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.smart-input__icon--tooltip:hover {
+  color: var(--color-text-muted);
+}
+
+/* Override tooltip-trigger styles for smart-input icons */
+.smart-input .tooltip-trigger {
+  display: inline;
+  position: static;
+}
+
+.smart-input__input {
+  width: 100%;
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--prefix-width, 5rem);
+  padding-right: 3rem; /* Right padding for suffix */
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.5px;
+  outline: none;
+}
+
+/* Condensed variant - no prefix, reduced vertical padding */
+.smart-input--condensed .smart-input__input {
+  padding-left: var(--space-3);
+  padding-top: var(--space-1);
+  padding-bottom: var(--space-1);
+}
+
+.smart-input--condensed .smart-input__suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.smart-input__input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+.smart-input__input--error {
+  color: var(--color-error) !important;
+}
+
+.smart-input__icon--error {
+  color: var(--color-error) !important;
+}
+
+.smart-input__suffix--error {
+  color: var(--color-error) !important;
+}
+
+.smart-input__suffix {
+  position: absolute;
+  right: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-placeholder);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Presets */
+.smart-input__presets {
+  display: flex;
+  border-top: 1px solid var(--color-border-dark);
+}
+
+.smart-input__preset-button {
+  flex: 1;
+  padding: var(--space-1) 0;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition-all);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  border-right: 1px solid var(--color-border-dark);
+  background-color: var(--color-surface-dark);
+}
+
+.smart-input__preset-button:last-child {
+  border-right: none;
+}
+
+.smart-input__preset-button:hover {
+  background-color: var(--color-surface-secondary);
+  color: white;
+}
+
+.smart-input__preset-button:active {
+  transform: translateY(1px);
+}
+
+/* Slider Styles */
+.smart-input__slider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.smart-input__slider-container {
+  position: relative;
+  flex: 1;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.smart-input__slider-track {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  right: 12px;
+  height: 2px;
+  background: var(--color-surface-secondary);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+
+.smart-input__slider-tick {
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--color-surface-tertiary);
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.smart-input__slider-labels {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+  margin-top: 4px;
+}
+
+.smart-input__slider-label {
+  position: absolute;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.smart-input__slider-input {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* Slider Thumb - WebKit */
+.smart-input__slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  background: var(--color-text-muted);
+  border-radius: 50%;
+  /* border: 2px solid var(--color-surface-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  transition: var(--transition-normal);
+}
+
+.smart-input__slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  background: var(--color-text);
+  box-shadow: 0 0 0 4px rgba(195, 89, 210, 0.2);
+}
+
+/* Slider Thumb - Mozilla */
+.smart-input__slider-input::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  border: 2px solid var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-normal);
+}
+
+.smart-input__slider-input::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  background: var(--color-text);
+  box-shadow: 0 0 0 4px rgba(195, 89, 210, 0.2);
+}
+
+.smart-input__slider-value {
+  min-width: 60px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .smart-input__input {
+    padding: var(--mobile-space-3) var(--mobile-space-3) var(--mobile-space-3) var(--prefix-width, 5rem);
+    font-size: var(--mobile-font-md);
+    min-height: var(--touch-target-min);
+  }
+  
+  .smart-input__icon {
+    left: var(--mobile-space-3);
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .smart-input__presets {
+    gap: 0;
+    padding: 0;
+    border-top: 1px solid var(--color-border-dark);
+  }
+  
+  .smart-input__preset-button {
+    padding: var(--mobile-space-2) var(--mobile-space-2);
+    font-size: var(--mobile-font-sm);
+    min-height: 36px;
+  }
+  
+  .smart-input__slider {
+    gap: var(--mobile-space-2);
+    padding: var(--mobile-space-3) 0 0 0;
+    height: 32px !important;
+    width: 100% !important;
+  }
+  
+  .smart-input__slider-value {
+    min-width: 25px;
+    font-size: var(--mobile-font-sm);
+  }
+}

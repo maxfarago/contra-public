@@ -1,0 +1,73 @@
+/* Import design system */
+@import './styles/variables.css';
+@import './styles/base/foundation.css';
+@import './styles/base/spacing.css';
+@import './styles/base/colors.css';
+@import './styles/base/layout.css';
+@import './styles/base/buttons.css';
+@import './styles/base/loader.css';
+@import './styles/base/forms.css';
+@import './styles/base/typography.css';
+@import './styles/components/navigation.css';
+@import './styles/components/navbar-search.css';
+@import './styles/pages/token-detail.css';
+@import './styles/pages/portfolio.css';
+@import './styles/components/atlas.css';
+@import './styles/components/logs.css';
+@import './styles/components/forms-extended.css';
+@import './styles/components/wallet-info.css';
+@import './styles/components/token-search.css';
+@import './styles/components/token-info.css';
+@import './styles/components/buy-sell-toggle.css';
+@import './styles/components/modal.css';
+@import './styles/components/deposit-modal.css';
+@import './styles/components/smart-input.css';
+@import './styles/components/buy-sell-button.css';
+@import './styles/components/buy-sell-form.css';
+@import './styles/components/slippage-control.css';
+@import './styles/components/summary-stats.css';
+@import './styles/components/tooltip.css';
+@import './styles/components/currency-toggle.css';
+@import './styles/components/bottom-tab-navigation.css';
+
+/* Base Layout */
+body {
+  background-color: var(--color-background);
+  margin: 0;
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+/* Hide scrollbars throughout the app */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  body, html, #root {
+    overflow-x: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  .flex.flex-col.min-h-screen {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}

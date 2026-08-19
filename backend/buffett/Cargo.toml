@@ -1,0 +1,21 @@
+[package]
+name = "buffett"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+dashmap = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+commons = { path = "../commons" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+
+# --- local dependencies ---
+hermes = { path = "../hermes" }
+trades = { path = "../trades" }
+guillotine = { path = "../guillotine" }
+rosetta = { path = "../rosetta" }

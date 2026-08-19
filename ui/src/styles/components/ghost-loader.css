@@ -1,0 +1,196 @@
+/* Ghost Loader Component */
+.ghost-loader {
+  margin-top: var(--space-4);
+}
+
+.ghost-loader__row {
+  cursor: pointer;
+}
+
+.ghost-loader__row:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+/* Token Cell */
+.ghost-loader__token {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.ghost-loader__token-image {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.ghost-loader__token-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.ghost-loader__token-name {
+  height: 14px;
+  width: 80px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__token-symbol {
+  height: 12px;
+  width: 40px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+/* Value Stacks */
+.ghost-loader__value-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.ghost-loader__value {
+  height: 14px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__percentage {
+  height: 12px;
+  width: 40px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__usd-value {
+  height: 12px;
+  width: 50px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__avg-price {
+  height: 12px;
+  width: 45px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ghost-loader__header,
+  .ghost-loader__row {
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .ghost-loader__token-image {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .ghost-loader__token-name {
+    width: 60px;
+    height: 12px;
+  }
+  
+  .ghost-loader__token-symbol {
+    width: 30px;
+    height: 10px;
+  }
+  
+  .ghost-loader__value {
+    width: 45px;
+    height: 12px;
+  }
+  
+  .ghost-loader__percentage,
+  .ghost-loader__usd-value,
+  .ghost-loader__avg-price {
+    width: 35px;
+    height: 10px;
+  }
+}
+
+/* Additional ghost loader elements */
+.ghost-loader__token-count {
+  height: 12px;
+  width: 50px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__tx-counts {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.ghost-loader__tx-buy {
+  height: 12px;
+  width: 8px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__tx-separator {
+  height: 12px;
+  width: 4px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__tx-sell {
+  height: 12px;
+  width: 8px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+.ghost-loader__button {
+  height: 32px;
+  width: 80px;
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-surface-secondary) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,7 @@
+{
+  "command_type": "DELETE_ORDER",
+  "order_id": "27b2da7a-cf13-4385-970f-018c24a782a3",
+  "order_type": "countersell",
+  "wallet_public_key": "PjCwX8idHNHy4Lyj43JqVKun3ztjAjzQc7YmQAr3ewv",
+  "token_mint": "9BpJ7UECX1GfGz1fgd1w63vXxmn7JW5bQEM5xNxhpump"
+}

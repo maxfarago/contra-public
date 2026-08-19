@@ -1,0 +1,21 @@
+[package]
+name = "janus"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+anyhow = { workspace = true }
+tracing = { workspace = true }
+aws-config = "1"
+aws-sdk-sqs = "1"
+borsh = "1.5.1"
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+hermes = { path = "../hermes" }
+trades = { path = "../trades" } 
+guillotine = { path = "../guillotine" }
+shylock = { path = "../shylock" }
+commons = { path = "../commons" }

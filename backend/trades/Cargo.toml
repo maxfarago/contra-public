@@ -1,0 +1,22 @@
+[package]
+name = "trades"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+serde = { workspace = true }
+serde_json = { workspace = true }
+solana-sdk = { workspace = true }
+solana-client = { workspace = true }
+solana-transaction-status = "1.18.18"
+anyhow = { workspace = true }
+async-trait = "0.1"
+tracing = { workspace = true }
+spl-associated-token-account = "2.0"
+anchor-lang = { version = "0.29.0", features = ["derive"] }
+base64 = "0.21"
+borsh = "1.5.1"
+hermes = { path = "../hermes" }
+commons = { path = "../commons" }
+rosetta = { path = "../rosetta" }

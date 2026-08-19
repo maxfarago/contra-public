@@ -1,0 +1,10 @@
+{
+  "command_type": "CREATE_ORDER",
+  "order_id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+  "order_type": "OneShotSell",
+  "token_to_sell": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzL7M6bGoNZb8m",
+  "token_amount": 100000000,
+  "slippage_bps": 100,
+  "wallet_public_key": "YOUR_WALLET_PUBLIC_KEY",
+  "wallet_private_key_encrypted": "ENCRYPTED_PRIVATE_KEY_BLOB"
+}

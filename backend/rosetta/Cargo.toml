@@ -1,0 +1,14 @@
+[package]
+name = "rosetta"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+solana-sdk = { workspace = true }
+solana-transaction-status = { workspace = true }
+tracing = { workspace = true }
+borsh = "0.10"
+anyhow = { workspace = true }
+base64 = "0.21"
+anchor-lang = "0.29"
+commons = { path = "../commons" }

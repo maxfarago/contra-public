@@ -1,0 +1,281 @@
+/* Navigation Component System */
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--color-background);
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow: visible;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 66px;
+  overflow: visible;
+}
+
+/* Left: Logo and Portfolio */
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-left: var(--space-4);
+  width: 300px;
+}
+
+.navbar__logo {
+  text-decoration: none;
+  text-transform: none;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: white;
+  transition: var(--transition-all);
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.navbar__logo:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Center: Search */
+.navbar__center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  max-width: 500px;
+}
+
+/* Right: Wallet Dropdown */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  justify-content: flex-end;
+  padding-right: var(--space-4);
+}
+
+.navbar__link {
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-all);
+  border-radius: var(--radius-sm);
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  color: var(--color-primary);
+}
+
+/* Wallet Dropdown */
+.navbar__wallet-dropdown {
+  position: relative;
+}
+
+.navbar__wallet-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-all);
+  outline: none;
+}
+
+.navbar__wallet-button:hover {
+  background-color: var(--color-surface-secondary);
+}
+
+.navbar__chevron {
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.navbar__wallet-button[aria-expanded="true"] .navbar__chevron {
+  transform: rotate(180deg);
+}
+
+.navbar__dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  z-index: 1100; /* above navbar */
+  margin-top: var(--space-2);
+}
+
+.navbar__dropdown-item {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__dropdown-item:last-child {
+  border-bottom: none;
+}
+
+/* --- CORRECTED STYLES --- */
+.navbar__wallet-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.navbar__wallet-address-text {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Add a hover state for the reused copy button when inside the navbar dropdown */
+.navbar__dropdown .token-info__copy-button:hover {
+  background-color: var(--color-surface-secondary);
+  border-radius: var(--radius-sm);
+}
+/* --- END OF CORRECTED STYLES --- */
+
+.navbar__dropdown-button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-body);
+  transition: var(--transition-all);
+}
+
+.navbar__dropdown-button:hover {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+/* Wallet styles now handled by WalletInfo component */
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-top: 66px; /* Account for fixed navbar */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .navbar__container {
+    min-height: 56px;
+    padding: 0 var(--mobile-space-4);
+    gap: var(--mobile-space-1);
+  }
+  
+  .navbar__left {
+    gap: var(--mobile-space-1);
+    padding-left: 0;
+    width: auto;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  
+  .navbar__logo {
+    letter-spacing: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    padding-bottom: var(--mobile-space-1);
+  }
+  
+  .navbar__logo::before {
+    content: "c";
+    font-size: var(--font-size-3xl);
+  }
+  
+  .navbar__link {
+    font-size: var(--mobile-font-md);
+    flex-shrink: 0;
+    padding: 0 var(--mobile-space-2);
+  }
+  
+  .navbar__center {
+    flex: 1 1 auto;
+    max-width: none;
+    margin: 0;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar__right {
+    width: auto;
+    padding-right: 0;
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+  
+  .navbar__wallet-button {
+    padding: var(--mobile-space-1);
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+  }
+  
+  .navbar__wallet-dropdown {
+    position: static;
+  }
+  
+  .navbar__dropdown {
+    position: fixed;
+    min-width: 180px;
+    right: var(--mobile-space-2);
+    left: auto;
+    top: 56px;
+  }
+  
+  .navbar__dropdown-item {
+    padding: var(--mobile-space-3);
+    min-height: var(--touch-target-min);
+  }
+  
+  .navbar__dropdown-button {
+    font-size: var(--mobile-font-base);
+    min-height: var(--touch-target-min);
+    display: flex;
+    align-items: center;
+  }
+  
+  .main-content {
+    margin-top: 56px;
+  }
+}

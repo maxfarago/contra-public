@@ -1,0 +1,53 @@
+# ######################################################################
+#                          !!! WARNING !!!                           
+#      THIS FLAG CONTROLS WHETHER THE BOT WILL SPEND REAL MONEY.     
+#         `true` = LIVE TRADING | `false` = SAFE DRY-RUN MODE        
+# ######################################################################
+live_trading_enabled = false
+
+[app]
+name = "axton"
+version = "0.1.0"
+
+[app.rpc]
+timeout_seconds = 30
+
+[app.trading]
+max_retries = 3
+default_compute_units = 200000
+default_priority_fee_microlamports = 1000000
+
+[app.websocket]
+reconnect_delay_seconds = 5
+max_reconnect_attempts = 10
+
+[app.database]
+connection_pool_size = 10
+query_timeout_seconds = 30
+
+[app.fees]
+poll_interval_seconds = 3
+min_priority_fee_microlamports = 1000000
+
+# logging
+
+[default]
+level = "debug"
+
+[default.axton]
+level = "debug"
+
+[default.guillotine]
+level = "debug"
+
+[default.trades]
+level = "debug"
+
+[default.hermes]
+level = "debug"
+
+[default.shylock]
+level = "debug"
+
+[default.aws_config]
+level = "warn"

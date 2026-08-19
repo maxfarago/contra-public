@@ -1,0 +1,295 @@
+/* Portfolio Page Styles */
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px !important;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Summary Section */
+.portfolio-summary-section {
+  width: 100%;
+}
+
+/* Content Section */
+.portfolio-content-section {
+  width: 100%;
+}
+
+/* Table Styles */
+.portfolio-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.portfolio-table th {
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-md);
+  text-align: left;
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+}
+
+/* Fixed column widths */
+.portfolio-table th:nth-child(1),
+.portfolio-table td:nth-child(1) {
+  width: 30%; /* Token */
+}
+
+.portfolio-table th:nth-child(2),
+.portfolio-table td:nth-child(2) {
+  width: 12%; /* Total Profit */
+}
+
+.portfolio-table th:nth-child(3),
+.portfolio-table td:nth-child(3) {
+  width: 12%; /* Balance */
+}
+
+.portfolio-table th:nth-child(4),
+.portfolio-table td:nth-child(4) {
+  width: 12%; /* Unrealized */
+}
+
+.portfolio-table th:nth-child(5),
+.portfolio-table td:nth-child(5) {
+  width: 12%; /* Realized */
+}
+
+.portfolio-table th:nth-child(6),
+.portfolio-table td:nth-child(6) {
+  width: 12%; /* Bought */
+}
+
+.portfolio-table th:nth-child(7),
+.portfolio-table td:nth-child(7) {
+  width: 12%; /* Sold */
+}
+
+.portfolio-table th:nth-child(8),
+.portfolio-table td:nth-child(8) {
+  width: 8%; /* Txs */
+}
+
+.portfolio-table th:nth-child(9),
+.portfolio-table td:nth-child(9) {
+  width: 75px; /* Action */
+  text-align: center;
+}
+
+/* Txs column colorization */
+.portfolio-table td:nth-child(8) .portfolio-tx-buy {
+  color: var(--color-buy-medium);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-table td:nth-child(8) .portfolio-tx-sell {
+  color: var(--color-sell-medium);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-table td:nth-child(8) .portfolio-tx-separator {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Sell All Button - Tertiary style with red color */
+.portfolio-sell-all-button {
+  background-color: transparent;
+  color: var(--color-sell-medium);
+  border: none;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  white-space: nowrap;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.portfolio-sell-all-button:hover:not(:disabled) {
+  background-color: transparent;
+  color: var(--color-sell-bright);
+}
+
+.portfolio-sell-all-button:focus,
+.portfolio-sell-all-button:active {
+  background-color: transparent;
+  color: var(--color-sell-bright);
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.portfolio-sell-all-button:disabled {
+  color: var(--color-text-placeholder);
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.portfolio-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+}
+
+.portfolio-table tbody tr {
+  transition: background-color var(--transition-normal);
+}
+
+.portfolio-table tbody tr:hover {
+  background-color: var(--color-surface);
+}
+
+/* Action cell should not participate in row hover */
+.portfolio-action-cell {
+  cursor: default !important;
+  padding: 0 !important;
+}
+
+.portfolio-table tbody tr:hover .portfolio-action-cell {
+  background-color: transparent !important;
+}
+
+/* Value stack styling */
+.portfolio-value-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0_5);
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-value-stack > div:first-child {
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+}
+
+.portfolio-value-stack > div:last-child {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Only colorize Total Profit and Realized P&L columns */
+.portfolio-profit .portfolio-value-stack > div:first-child,
+.portfolio-realized .portfolio-value-stack > div:first-child {
+  font-weight: var(--font-weight-bold);
+}
+
+.portfolio-profit.profit-positive .portfolio-value-stack > div:first-child,
+.portfolio-realized.profit-positive .portfolio-value-stack > div:first-child {
+  color: var(--color-buy-bright);
+}
+
+.portfolio-profit.profit-positive .portfolio-value-stack > div:last-child,
+.portfolio-realized.profit-positive .portfolio-value-stack > div:last-child {
+  color: var(--color-buy-medium);
+}
+
+.portfolio-profit.profit-negative .portfolio-value-stack > div:first-child,
+.portfolio-realized.profit-negative .portfolio-value-stack > div:first-child {
+  color: var(--color-sell-bright);
+}
+
+.portfolio-profit.profit-negative .portfolio-value-stack > div:last-child,
+.portfolio-realized.profit-negative .portfolio-value-stack > div:last-child {
+  color: var(--color-sell-medium);
+}
+
+/* Loading and Empty States */
+.portfolio-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-8);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.portfolio-empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-8);
+  margin: 0;
+}
+
+.portfolio-error {
+  text-align: center;
+  color: var(--color-error);
+  padding: var(--space-8);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  margin: 0;
+}
+
+.portfolio-retry-button {
+  margin-top: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-normal);
+}
+
+.portfolio-retry-button:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .portfolio-container {
+    gap: var(--mobile-space-4);
+    padding: 0;
+  }
+  
+  .portfolio-table-container {
+    margin: 0 calc(-1 * var(--mobile-space-4));
+    padding: 0 var(--mobile-space-4);
+  }
+  
+  .portfolio-table {
+    min-width: 900px;
+  }
+  
+  .portfolio-table th,
+  .portfolio-table td {
+    padding: var(--mobile-space-2) var(--mobile-space-3);
+    font-size: var(--mobile-font-sm);
+  }
+  
+  .portfolio-table th {
+    font-size: var(--mobile-font-sm);
+  }
+  
+  .portfolio-value-stack > div:first-child {
+    font-size: var(--mobile-font-sm);
+  }
+  
+  .portfolio-value-stack > div:last-child {
+    font-size: var(--mobile-font-xs);
+  }
+  
+  .portfolio-sell-all-button {
+    padding: var(--mobile-space-2) var(--mobile-space-3);
+    font-size: var(--mobile-font-sm);
+    min-height: var(--touch-target-min);
+  }
+}

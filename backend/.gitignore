@@ -1,0 +1,9 @@
+/.DS_Store
+/target
+
+.env
+*.code-workspace
+
+.vscode/
+
+*.log

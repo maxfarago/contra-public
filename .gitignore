@@ -1,0 +1,23 @@
+# Mac OS
+.DS_Store
+
+# envs & deps
+**/.env
+**/venv/
+**/node_modules/
+
+# logs
+**/data/
+**/logs/
+
+# builds
+**/target/
+**/dist/
+
+# redis
+dump.rdb
+
+# editor
+*.code-workspace
+.vscode/
+.cursor/
