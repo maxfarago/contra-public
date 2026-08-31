@@ -1,6 +1,6 @@
 # contra
 
-contra: a live-controlled solana trading bot with a deck.gl market map. pump.fun + pumpswap, actor-isolated strategies, no restart to create / update / kill a trade.
+contra: a live-controlled solana trading bot. pump.fun + pumpswap, actor-isolated strategies, no restart to create / update / kill a trade.
 
 ## overview
 
@@ -28,7 +28,7 @@ helius ws
                 │
            hermes → postgres
                 │
-                └─► ui (react + deck.gl atlas)
+                └─► ui
 ```
 
 - **ticker** — dual helius websockets, pump.fun + pumpswap logs, no business logic. forwards raw tx logs to buffett.
@@ -39,7 +39,6 @@ helius ws
 - **guillotine** — protocol instruction builder + signer. no rpc. decrypts the hot wallet with kms, simulates, submits.
 - **hermes** — fire-and-forget postgres logger, off the trading loop.
 - **api** — orders / positions / wallet / token http. commands land on sqs; the rust engine is the consumer.
-- **ui** — atlas (age × mcap scatter), trading hud, portfolio.
 
 ## license
 
