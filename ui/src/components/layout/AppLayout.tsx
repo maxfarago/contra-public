@@ -21,10 +21,10 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       return response.data;
     },
     enabled: isAuthenticated,
-    refetchInterval: 60000, // 1 min
+    refetchInterval: 60000,
     staleTime: 60000,
     retry: false,
-    refetchOnWindowFocus: false, // Prevent refetching on window focus
+    refetchOnWindowFocus: false,
   });
 
   const [isInitialDepositModalOpen, setIsInitialDepositModalOpen] = useState(false);
@@ -41,10 +41,6 @@ const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-
-  if (!isAuthenticated) {
-    return <>{children}</>;
-  }
 
   return (
     <div className="flex flex-col min-h-screen">

@@ -5,7 +5,6 @@ import WalletInfo from "../wallet/WalletInfo";
 import CurrencyToggle from "../shared/CurrencyToggle";
 import DepositModal from "../wallet/DepositModal";
 import { useCurrency } from "../../contexts/CurrencyContext";
-import { useAuth } from "../../contexts/AuthContext";
 
 interface NavbarProps {
   walletData?: {
@@ -24,7 +23,6 @@ const Navbar: React.FC<NavbarProps> = ({
   isVisible = true,
 }) => {
   const { currency, setCurrency } = useCurrency();
-  const { logout } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -117,15 +115,6 @@ const Navbar: React.FC<NavbarProps> = ({
                     }}
                   >
                     Deposit
-                  </button>
-                  <button 
-                    className="navbar__dropdown-item navbar__dropdown-button"
-                    onClick={() => {
-                      logout();
-                      setIsDropdownOpen(false);
-                    }}
-                  >
-                    Logout
                   </button>
                 </div>
               )}
